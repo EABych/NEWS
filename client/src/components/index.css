@@ -1,0 +1,205 @@
+body {
+  display: flex;
+  justify-content: center;
+  font-family: Open Sans Condensed;
+  background: #58d2ff url(background.jpg);
+}
+
+.Main {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.UserData {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-family: Open Sans Condensed;
+  text-align: center;
+  margin-top: 0px;
+}
+
+/* BUTTON -------------------------------*/
+.btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  padding: 10px 40px;
+  margin: 10px 75px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 600;
+  line-height: 30px;
+  color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+  background: #ff9627e9;
+  border-width: 0;
+  filter: drop-shadow(10px 10px 10px rgb(55, 55, 75));
+  outline: none;
+  cursor: pointer;
+  transition: 1.5s;
+  opacity: 0.3;
+}
+
+.btn:before,
+.btn:after {
+  content: "";
+  position: absolute;
+  height: 200px;
+  left: -150%;
+  margin-top: -100px;
+  top: 50%;
+  width: 200px;
+  border-radius: 50%;
+  opacity: 0.3;
+  z-index: -1;
+  transform: scale(0);
+}
+
+.btn:before {
+  background: #ffeede;
+  transition: 0.8s ease-out;
+}
+
+.btn:after {
+  transition: 0.4s ease-in 0.3s;
+}
+
+.btn:hover {
+  color: #532828;
+}
+
+.btn:hover:before,
+.btn:hover:after {
+  opacity: 1;
+  transform: scale(4);
+}
+
+/* form starting stylings ------------------------------- */
+.form-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+input {
+  font-size: 16px;
+  padding: 10px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-family: Open Sans Condensed;
+}
+
+input:focus {
+  outline: none;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+
+/* FF 4-18 */
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+
+/* FF 19+ */
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+/* IE 10+ */
+
+label {
+  color: #999;
+  font-size: 16px;
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  top: -20px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  font-family: Open Sans Condensed;
+}
+
+/* active state */
+input:focus~label,
+input:valid~label {
+  top: -15px;
+  font-size: 14px;
+  color: #5264ae;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  width: auto;
+}
+
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  position: absolute;
+  background: #5264ae;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus~.bar:before,
+input:focus~.bar:after {
+  width: 50%;
+}
+
+#root {
+  margin-top: 100px;
+  border: 1px solid black;
+  color: rgba(75, 62, 162, 0.672);
+  width: 400px;
+  height: auto;
+  display: flex;
+
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  filter: drop-shadow(26px 26px 20px rgb(55, 55, 75));
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: #282a31;
+}
+
+a {
+  color: #282a31;
+}
+
+.has-error input {
+  color: #8d302e;
+  border: 2px solid #8a2e2d;
+}
